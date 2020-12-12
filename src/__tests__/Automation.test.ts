@@ -11,7 +11,7 @@ describe("Employee Manager 1.2", () => {
     afterAll(async () => {
         await driver.quit();
 
-//Link to Jira test cases for Equivalence Partitioning: https://dmutah.atlassian.net/jira/software/c/projects/NBDL/issues/NBDL-76
+//Link to Jira test cases for Equivalence Partitioning: https://dmutah.atlassian.net/jira/software/c/projects/NBDL/issues/NBDL-74
   test("EP with correct header requirement 9-19 characters", async () => {
     await em.inputInformation({
       header: "ABCD12345",
@@ -40,6 +40,7 @@ describe("Employee Manager 1.2", () => {
     expect(person.offense).toEqual("speeding");
     expect(person.dow).toEqual("11112011");
     });
+//Link to Jira test cases for Equivalence Partitioning: https://dmutah.atlassian.net/jira/software/c/projects/NBDL/issues/NBDL-75
 test("EP with incorrect header requirement of 8 characters only", async () => {
     await em.inputInformation({
       header: "ABCD1234",
@@ -59,6 +60,7 @@ test("EP with incorrect header requirement of 8 characters only", async () => {
             expect(await (await driver.findElement(errorMessage)).getText()).toBe(
                 "The 'Header' field should be between 9 and 19 characters long.");
     });
+//Link to Jira test cases for Equivalence Partitioning: https://dmutah.atlassian.net/jira/software/c/projects/NBDL/issues/NBDL-76
 test("EP with incorrect header requirement of 20 characters only", async () => {
     await em.inputInformation({
       header: "abcdefghijklmnopqrst",
