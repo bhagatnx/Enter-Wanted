@@ -11,6 +11,7 @@ describe("Employee Manager 1.2", () => {
     afterAll(async () => {
         await driver.quit();
 
+//Link to Jira test cases for Equivalence Partitioning: https://dmutah.atlassian.net/jira/software/c/projects/NBDL/issues/NBDL-76
   test("EP with correct header requirement 9-19 characters", async () => {
     await em.inputInformation({
       header: "ABCD12345",
