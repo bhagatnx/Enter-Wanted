@@ -48,67 +48,67 @@ export class PageObject {
 
     async inputInformation(EnterWanted) {
         await this.driver.wait(until.elementLocated(this.headerInput));
-        if (EnterWanted) {
+        if (EnterWanted.header) {
           await this.driver.findElement(this.headerInput).clear();
           await this.driver
             .findElement(this.headerInput)
             .sendKeys(EnterWanted.Header);
         }
-        if (EnterWanted) {
+        if (EnterWanted.mke) {
           await this.driver.findElement(this.mkeInput).clear();
           await this.driver
             .findElement(this.mkeInput)
             .sendKeys(EnterWanted.Mke);
         }
-        if (EnterWanted) {
+        if (EnterWanted.oai) {
           await this.driver.findElement(this.oaiInput).clear();
           await this.driver
             .findElement(this.oaiInput)
             .sendKeys(EnterWanted.Oai);
         }
-        if (EnterWanted) {
+        if (EnterWanted.name) {
             await this.driver.findElement(this.nameInput).clear();
             await this.driver
               .findElement(this.nameInput)
               .sendKeys(EnterWanted.Name);
         }
-        if (EnterWanted) {
+        if (EnterWanted.sex) {
             await this.driver.findElement(this.sexInput).clear();
             await this.driver
               .findElement(this.sexInput)
               .sendKeys(EnterWanted.Sex);
         }
-        if (EnterWanted) {
+        if (EnterWanted.race) {
             await this.driver.findElement(this.raceInput).clear();
             await this.driver
               .findElement(this.raceInput)
               .sendKeys(EnterWanted.Race);
         }
-        if (EnterWanted) {
+        if (EnterWanted.height) {
             await this.driver.findElement(this.heightInput).clear();
             await this.driver
               .findElement(this.heightInput)
               .sendKeys(EnterWanted.Height);
         }
-        if (EnterWanted) {
+        if (EnterWanted.weight) {
             await this.driver.findElement(this.weightInput).clear();
             await this.driver
               .findElement(this.weightInput)
               .sendKeys(EnterWanted.Weight);
         }
-        if (EnterWanted) {
+        if (EnterWanted.hair) {
             await this.driver.findElement(this.hairInput).clear();
             await this.driver
               .findElement(this.hairInput)
               .sendKeys(EnterWanted.Hair);
         }
-        if (EnterWanted) {
+        if (EnterWanted.offense) {
             await this.driver.findElement(this.offenseInput).clear();
             await this.driver
               .findElement(this.offenseInput)
               .sendKeys(EnterWanted.Offense);
         }
-        if (EnterWanted) {
+        if (EnterWanted.dow) {
             await this.driver.findElement(this.dowInput).clear();
             await this.driver
               .findElement(this.dowInput)
@@ -177,7 +177,6 @@ export class PageObject {
         let DOW = await (
           await this.driver.findElement(this.dowInput)
         ).getAttribute("value");
-
         return ["headerInput", "mkeInput", "oaiInput", "nameInput", "sexInput", "raceInput", "heightInput", "weightInput", "hairInput", "offenseInput", "dowInput" ];
     }
 
@@ -190,7 +189,7 @@ export class PageObject {
    async quit(): Promise<void> {
     return this.driver.quit();
    }
-}
+
 
 interface EW { 
   header: string;
